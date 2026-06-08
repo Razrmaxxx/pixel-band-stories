@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pixel Band Stories creates short-form music history videos in a retro pixel-art style for TikTok, Instagram, Facebook Reels, and YouTube Shorts.">
+  <title>Pixel Band Stories</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101217;
+      --panel: #1b1f2a;
+      --text: #f4f7fb;
+      --muted: #b8c0cc;
+      --accent: #ffcc33;
+      --cyan: #46d9ff;
+      --pink: #ff3f78;
+      --green: #62d26f;
+      --line: rgba(255, 255, 255, 0.14);
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        var(--bg);
+      background-size: 18px 18px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(1020px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 42px 0;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+      gap: 34px;
+      align-items: center;
+      border: 2px solid var(--line);
+      background: rgba(27, 31, 42, 0.94);
+      padding: 36px;
+      box-shadow: 8px 8px 0 var(--shadow);
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 4px 10px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 8vw, 76px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 18px 0 0;
+      color: var(--cyan);
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 700;
+    }
+
+    .intro {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 2px solid var(--cyan);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      background: rgba(70, 217, 255, 0.12);
+    }
+
+    .button.secondary {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .pixel-card {
+      border: 2px solid var(--line);
+      background: #121722;
+      padding: 22px;
+    }
+
+    .pixel-stage {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-auto-rows: 28px;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .block {
+      background: var(--cyan);
+      box-shadow: inset 0 -4px rgba(0, 0, 0, 0.25);
+    }
+
+    .block:nth-child(2),
+    .block:nth-child(9),
+    .block:nth-child(14) {
+      background: var(--accent);
+    }
+
+    .block:nth-child(4),
+    .block:nth-child(11),
+    .block:nth-child(16) {
+      background: var(--pink);
+    }
+
+    .block:nth-child(7),
+    .block:nth-child(13) {
+      background: var(--green);
+    }
+
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .stat strong {
+      color: var(--text);
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .section {
+      border: 1px solid var(--line);
+      background: rgba(27, 31, 42, 0.9);
+      padding: 22px;
+    }
+
+    .section p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    @media (max-width: 780px) {
+      .hero,
+      .sections {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 24px, 1020px);
+        padding: 24px 0;
+      }
+
+      .hero {
+        padding: 24px;
+        box-shadow: 5px 5px 0 var(--shadow);
+      }
+
+      .intro {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-labelledby="site-title">
+      <div>
+        <span class="label">Short-form music history</span>
+        <h1 id="site-title">Pixel Band Stories</h1>
+        <p class="subtitle">Short-form music history videos in a retro pixel-art style.</p>
+        <p class="intro">Pixel Band Stories creates original short videos, captions, and visual concepts for social platforms including TikTok, Instagram, Facebook Reels, and YouTube Shorts.</p>
+        <p class="intro">The project focuses on rock, punk, metal, alternative, grunge, nu-metal, pop-punk, and related music scenes.</p>
+        <nav class="links" aria-label="Project links">
+          <a class="button" href="mailto:smetua91@gmail.com">Contact</a>
+          <a class="button secondary" href="privacy-policy.html">Privacy Policy</a>
+          <a class="button secondary" href="terms-of-service.html">Terms of Service</a>
+        </nav>
+      </div>
+
+      <aside class="pixel-card" aria-label="Publishing workflow overview">
+        <div class="pixel-stage" aria-hidden="true">
+          <span class="block"></span><span class="block"></span><span class="block"></span><span class="block"></span>
+          <span class="block"></span><span class="block"></span><span class="block"></span><span class="block"></span>
+          <span class="block"></span><span class="block"></span><span class="block"></span><span class="block"></span>
+          <span class="block"></span><span class="block"></span><span class="block"></span><span class="block"></span>
+        </div>
+        <div class="stat"><span>Format</span><strong>Short video</strong></div>
+        <div class="stat"><span>Style</span><strong>Retro pixel art</strong></div>
+        <div class="stat"><span>Publishing</span><strong>Social platforms</strong></div>
+      </aside>
+    </section>
+
+    <section class="sections" aria-label="Project details">
+      <article class="section">
+        <h2>Content</h2>
+        <p>Original music history stories about bands, artists, albums, genres, scenes, and cultural moments.</p>
+      </article>
+      <article class="section">
+        <h2>Workflow</h2>
+        <p>The publishing workflow helps prepare, schedule, publish, and check the status of Pixel Band Stories videos.</p>
+      </article>
+      <article class="section">
+        <h2>Platforms</h2>
+        <p>Videos are created for TikTok, Instagram, Facebook Reels, YouTube Shorts, and related short-form channels.</p>
+      </article>
+    </section>
+
+    <footer>
+      <span>Contact: <a href="mailto:smetua91@gmail.com">smetua91@gmail.com</a></span>
+      <nav aria-label="Legal links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+      </nav>
+    </footer>
+  </main>
+</body>
+</html>
